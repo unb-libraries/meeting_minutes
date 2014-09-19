@@ -61,7 +61,8 @@ function meeting_minutes_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Placeholder text, replaced in hook_views_pre_view';
+  $handler->display->display_options['header']['area']['content'] = '<p>Please contact <a href="mailto:jjc@unb.ca">Jeff Carter</a> or the committee chair if there are minutes missing from here.</p>
+<p>Note: In the interests of sharing information as quickly as possible, some committees listed below have agreed to post minutes prior to formal committee acceptance. Please keep this in mind when reviewing them. Library Board minutes are only posted once they have been accepted.</p>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
