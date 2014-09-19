@@ -199,8 +199,8 @@ function meeting_minutes_form_alter(&$form, $form_state, $form_id) {
       $form['title']['#type'] = 'hidden';
       $form['title']['#default_value'] = 'temp';
 
+      $form['title']['#element_validate'] = array('_title_validate');
       $form['field_special_note']['#element_validate'] = array('_special_note_validate');
-      $form['field_special_note']['#desctipion'] = '15 characters only, no spaces';
 
       $field_language = $form['field_committee_or_publication']['#language'];
       $options = _revise_committee_options($form['field_committee_or_publication'][$field_language]['#options'], 'edit');
@@ -224,12 +224,61 @@ function _special_note_validate($element, &$form_state) {
   $language = $element['#language'];
   $special_note = $element[$language][0]['value']['#value'];
 
+  if ($special_note == '') {
+    return;
+  }
+
   if (!preg_match('/^[A-Za-z0-9_-]+$/', $special_note)) {
     form_error($element, t('Special note must only contain alphanumeric characters, dashes, and underscores.'));
   }
   if (count($special_note) > 15) {
     form_error($element, t('Special note must be 15 characters or less.'));
   }
+}
+
+function _title_validate($element, &$form_state) {
+  $node_exists = $form_state['complete form']['nid']['#value'] != NULL ? TRUE : FALSE;
+
+  if (!$node_exists) {
+    $special_note_language = $form_state['complete form']['field_special_note']['#language'];
+    $special_note = $form_state['complete form']['field_special_note'][$special_note_language][0]['value']['#value'];
+
+    $committee_language = $form_state['complete form']['field_committee_or_publication']['#language'];
+    $committee = $form_state['complete form']['field_committee_or_publication'][$committee_language]['#value'];
+
+    $date_language = $form_state['complete form']['field_date_of_meeting']['#language'];
+    $date_string = $form_state['complete form']['field_date_of_meeting'][$date_language][0]['value']['#value']['date'];
+    $date_array = date_parse($date_string);
+    $date = $date_array['year'] . '-' . sprintf("%02s", $date_array['month']) . '-' . sprintf("%02s", $date_array['day']);
+
+    $title = _generate_node_title($committee, $date, $special_note);
+
+    // Check if title already exists. If so, set form error.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->propertyCondition('type', 'meeting_minutes')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('title', $title)
+      ->range(0, 1)
+      ->addMetaData('account', user_load(1)); // Run the query as user 1.
+    $result = $query->execute();
+    if (isset($result['node'])) {
+      if (count($result['node']) > 0) {
+          $existing_node_ids = array_keys($result['node']);
+          $existing_node_id = $existing_node_ids[0];
+        form_error($element, t('Meeting minutes already exist for this committee/date. To add another set of minutes for this committee/date, please enter a Special Note below. Otherwise, <a href="/node/' . $existing_node_id . '/edit">click here to edit existing minutes</a>.'));
+      }
+    }
+  }
+}
+
+function _generate_node_title($committee, $date, $special_note) {
+  $date_array = explode(' ', $date);
+  $new_title = $committee . '-' . $date_array[0];
+  if ($special_note != '') {
+    $new_title = $new_title . '-' . $special_note;
+  }
+  return $new_title;
 }
 
 /**
@@ -255,38 +304,13 @@ function meeting_minutes_node_presave($node) {
     $committee = $node->field_committee_or_publication[$language][0]['value'];
     $special_note = isset($node->field_special_note[$language][0]['value']) ? $node->field_special_note[$language][0]['value'] : '';
     $date = $node->field_date_of_meeting[$language][0]['value'];
-    $date_array = explode(' ', $date);
 
     // Rename title
-    $new_title = $committee . '-' . $date_array[0];
-    if ($special_note != '') {
-      $new_title = $new_title . "-" . $special_note;
-    }
-    $node->title = $new_title;
+    $node->title = _generate_node_title($committee, $date, $special_note);
 
     if ($node->nid == '') {
-      // If new node is being created, check if minutes already exist for this committee/date. If so, set message, delete file, and abort node save.
-      $query = new EntityFieldQuery();
-      $query->entityCondition('entity_type', 'node')
-        ->propertyCondition('type', 'meeting_minutes')
-        ->propertyCondition('status', 1)
-        ->fieldCondition('field_committee_or_publication', 'value', $committee)
-        ->fieldCondition('field_date_of_meeting', 'value', $date)
-        ->range(0, 1)
-        ->addMetaData('account', user_load(1)); // Run the query as user 1.
-      $result = $query->execute();
-      if (isset($result['node'])) {
-        if (count($result['node'])) {
-          $file = file_load($node->field_minutes_file[$language][0]['fid']);
-          file_delete($file);
-          $existing_node_ids = array_keys($result['node']);
-          $existing_node_id = $existing_node_ids[0];
-          drupal_set_message('Meeting minutes for this committee and date already exist. <a href="/node/' . $existing_node_id . '/edit">Please edit the existing minutes instead.</a>', 'error');
-          drupal_goto(current_path());
-        }
-      }
-
       // Rename file
+      $date_array = explode(' ', $date);
       $new_filename = $committee . '-' . $date_array[0] . '.pdf';
       $fid = $node->field_minutes_file[$language][0]['fid'];
       $source = file_load($fid);
@@ -296,7 +320,7 @@ function meeting_minutes_node_presave($node) {
       // Use drupal_basename($source->uri) to get the actual name of the file.
       $new_destination = str_replace(drupal_basename($source->uri), $new_filename, $source->uri);
       $source->filename = $new_filename;
-      $result = file_move($source, $new_destination, FILE_EXISTS_ERROR);
+      $result = file_move($source, $new_destination, FILE_EXISTS_RENAME);
     }
   }
 }
