@@ -62,19 +62,6 @@ function meeting_minutes_permission() {
   );
 }
 
-function meeting_minutes_views_pre_view(&$view, &$display_id, &$args) {
-  $permitted_committees = _get_permitted_committees('edit');
-  $showAddLink = count($permitted_committees) > 0 ? TRUE : FALSE;
-  $header = '<div class="view-header">
-              <p>Please contact <a href="mailto:jjc@unb.ca">Jeff Carter</a> or the committee chair if there are minutes missing from here.</p>
-              <p>Note: In the interests of sharing information as quickly as possible, some committees listed below have agreed to post minutes prior to formal committee acceptance. Please keep this in mind when reviewing them. Library Board minutes are only posted once they have been accepted.</p>';
-  if ($showAddLink) {
-    $header .= '<p><a href="node/add/meeting-minutes">Upload more minutes</a></p>
-            </div>';
-  }
-  $view->set_item_option($display_id, 'header', 'area', 'content', $header);
-}
-
 /**
  * Sets permissions for each action.
  */
@@ -212,6 +199,12 @@ function meeting_minutes_form_alter(&$form, $form_state, $form_id) {
     case 'views_exposed_form':
       $options = _revise_committee_options($form['field_committee_or_publication_value']['#options'], 'view');
       $form['field_committee_or_publication_value']['#options'] = $options;
+
+      $permitted_committees = _get_permitted_committees('edit');
+      $showAddLink = count($permitted_committees) > 0 ? TRUE : FALSE;
+      if ($showAddLink) {
+        $form['#prefix'] = '<p><a href="node/add/meeting-minutes">Upload more minutes</a></p>';
+      }
   break;
 
     default:
