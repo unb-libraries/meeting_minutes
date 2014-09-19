@@ -203,7 +203,7 @@ function meeting_minutes_form_alter(&$form, $form_state, $form_id) {
       $permitted_committees = _get_permitted_committees('edit');
       $showAddLink = count($permitted_committees) > 0 ? TRUE : FALSE;
       if ($showAddLink) {
-        $form['#prefix'] = '<p><a href="node/add/meeting-minutes">Upload more minutes</a></p>';
+        $form['#prefix'] = '<br><p><a href="node/add/meeting-minutes">Upload more minutes</a></p>';
       }
   break;
 
