@@ -197,13 +197,15 @@ function meeting_minutes_form_alter(&$form, $form_state, $form_id) {
   break;
 
     case 'views_exposed_form':
-      $options = _revise_committee_options($form['field_committee_or_publication_value']['#options'], 'view');
-      $form['field_committee_or_publication_value']['#options'] = $options;
+      if (isset($form['field_committee_or_publication_value'])) {
+        $options = _revise_committee_options($form['field_committee_or_publication_value']['#options'], 'view');
+        $form['field_committee_or_publication_value']['#options'] = $options;
 
-      $permitted_committees = _get_permitted_committees('edit');
-      $showAddLink = count($permitted_committees) > 0 ? TRUE : FALSE;
-      if ($showAddLink) {
-        $form['#prefix'] = '<br><p><a href="node/add/meeting-minutes">Upload more minutes</a></p>';
+        $permitted_committees = _get_permitted_committees('edit');
+        $showAddLink = count($permitted_committees) > 0 ? TRUE : FALSE;
+        if ($showAddLink) {
+          $form['#prefix'] = '<br><p><a href="node/add/meeting-minutes">Upload more minutes</a></p>';
+        }
       }
   break;
 
