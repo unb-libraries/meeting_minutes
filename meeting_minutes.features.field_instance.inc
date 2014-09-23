@@ -126,7 +126,7 @@ function meeting_minutes_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'description_field' => 0,
-      'file_directory' => '',
+      'file_directory' => 'minutes',
       'file_extensions' => 'pdf',
       'max_filesize' => '',
       'user_register_form' => FALSE,
