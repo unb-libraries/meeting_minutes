@@ -1,7 +1,7 @@
 name = Meeting Minutes
 description = Allows users to upload committee meeting minutes and browse uploaded meeting minutes.
 core = 7.x
-package = Features
+package = UNB Library
 version = 7.x-1.0
 project = meeting_minutes
 dependencies[] = ctools
