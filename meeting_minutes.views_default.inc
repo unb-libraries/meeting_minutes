@@ -61,9 +61,11 @@ function meeting_minutes_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<p>Please contact <a href="mailto:jjc@unb.ca">Jeff Carter</a> or the committee chair if there are minutes missing from here.</p>
-<p>Note: In the interests of sharing information as quickly as possible, some committees listed below have agreed to post minutes prior to formal committee acceptance. Please keep this in mind when reviewing them. Library Board minutes are only posted once they have been accepted.</p>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = 'Please contact <a href="mailto:jjc@unb.ca">Jeff Carter</a> or the committee chair if there are minutes missing from here.
+
+Note: In the interests of sharing information as quickly as possible, some committees listed below have agreed to post minutes prior to formal committee acceptance. Please keep this in mind when reviewing them. Library Board minutes are only posted once they have been accepted.
+';
+  $handler->display->display_options['header']['area']['format'] = 'html';
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
@@ -96,11 +98,11 @@ function meeting_minutes_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['order'] = 'DESC';
+  /* Sort criterion: Content: Date of meeting (field_date_of_meeting) */
+  $handler->display->display_options['sorts']['field_date_of_meeting_value']['id'] = 'field_date_of_meeting_value';
+  $handler->display->display_options['sorts']['field_date_of_meeting_value']['table'] = 'field_data_field_date_of_meeting';
+  $handler->display->display_options['sorts']['field_date_of_meeting_value']['field'] = 'field_date_of_meeting_value';
+  $handler->display->display_options['sorts']['field_date_of_meeting_value']['order'] = 'DESC';
   /* Contextual filter: Content: Committee or publication (field_committee_or_publication) */
   $handler->display->display_options['arguments']['field_committee_or_publication_value']['id'] = 'field_committee_or_publication_value';
   $handler->display->display_options['arguments']['field_committee_or_publication_value']['table'] = 'field_data_field_committee_or_publication';

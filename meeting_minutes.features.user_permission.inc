@@ -87,6 +87,7 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View CD',
     'roles' => array(
       'Meeting Minutes - Collections Development View' => 'Meeting Minutes - Collections Development View',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'meeting_minutes',
   );
@@ -96,6 +97,7 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View ISC',
     'roles' => array(
       'Meeting Minutes - Instructional Services Committee View' => 'Meeting Minutes - Instructional Services Committee View',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'meeting_minutes',
   );
@@ -105,6 +107,7 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View LB',
     'roles' => array(
       'Meeting Minutes - Library Board View' => 'Meeting Minutes - Library Board View',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'meeting_minutes',
   );
@@ -114,6 +117,7 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View LCSWG',
     'roles' => array(
       'Meeting Minutes - John B. McNair Learning Commons Services View' => 'Meeting Minutes - John B. McNair Learning Commons Services View',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'meeting_minutes',
   );
@@ -123,6 +127,7 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View PSC',
     'roles' => array(
       'Meeting Minutes - Public Service Committee View' => 'Meeting Minutes - Public Service Committee View',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'meeting_minutes',
   );
@@ -132,6 +137,7 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View STDC',
     'roles' => array(
       'Meeting Minutes - Staff Training & Development Committee View' => 'Meeting Minutes - Staff Training & Development Committee View',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'meeting_minutes',
   );
@@ -141,6 +147,7 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View WERC',
     'roles' => array(
       'Meeting Minutes - Web & Electronic Resources Committee View' => 'Meeting Minutes - Web & Electronic Resources Committee View',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'meeting_minutes',
   );
@@ -150,6 +157,7 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View WRC',
     'roles' => array(
       'Meeting Minutes - Website Review Committee View' => 'Meeting Minutes - Website Review Committee View',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'meeting_minutes',
   );
