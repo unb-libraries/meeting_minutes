@@ -303,18 +303,19 @@ function meeting_minutes_node_presave($node) {
     // Rename title
     $node->title = _generate_node_title($committee, $date, $special_note);
 
-    if ($node->nid == '') {
-      // Rename file
-      $date_array = explode(' ', $date);
-      $new_filename = $committee . '-' . $date_array[0] . '.pdf';
-      $fid = $node->field_minutes_file[$language][0]['fid'];
-      $source = file_load($fid);
-      // Note: $source->filename doesn't always represent the true filename.
-      // If the same filename has been uploaded multiple time, Drupal will append a number to the end
-      // of the actual file, but will leave the filename attribute the same.
-      // Use drupal_basename($source->uri) to get the actual name of the file.
-      $new_destination = str_replace(drupal_basename($source->uri), $new_filename, $source->uri);
-      $source->filename = $new_filename;
+    // Rename file
+    $date_array = explode(' ', $date);
+    $new_filename = $committee . '-' . $date_array[0] . '.pdf';
+    $fid = $node->field_minutes_file[$language][0]['fid'];
+    $source = file_load($fid);
+    // Note: $source->filename doesn't always represent the true filename.
+    // If the same filename has been uploaded multiple time, Drupal will append a number to the end
+    // of the actual file, but will leave the filename attribute the same.
+    // Use drupal_basename($source->uri) to get the actual name of the file.
+    $new_destination = str_replace(drupal_basename($source->uri), $new_filename, $source->uri);
+    $source->filename = $new_filename;
+    // Only rename file is it's not already named properly
+    if ($source->uri != $new_destination) {
       $result = file_move($source, $new_destination, FILE_EXISTS_RENAME);
     }
   }
