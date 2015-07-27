@@ -17,7 +17,6 @@ function meeting_minutes_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_committee_or_publication',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -32,6 +31,7 @@ function meeting_minutes_field_default_field_bases() {
         'LCSWG' => 'John B. McNair Learning Commons Services Committee',
         'LB' => 'Library Board',
         'PSC' => 'Public Service Committee',
+        'SAC' => 'Student Advisory Council',
         'STDC' => 'Staff Training & Development Committee',
         'WERC' => 'Web & Electronic Resources Committee',
         'WRC' => 'Website Review Committee',
@@ -49,7 +49,6 @@ function meeting_minutes_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_date_of_meeting',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -79,14 +78,6 @@ function meeting_minutes_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_minutes_file',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -110,14 +101,6 @@ function meeting_minutes_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_special_note',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',

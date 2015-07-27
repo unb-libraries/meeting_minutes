@@ -10,7 +10,8 @@
 function meeting_minutes_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-meeting_minutes-field_committee_or_publication'
+  // Exported field_instance:
+  // 'node-meeting_minutes-field_committee_or_publication'
   $field_instances['node-meeting_minutes-field_committee_or_publication'] = array(
     'bundle' => 'meeting_minutes',
     'default_value' => NULL,
@@ -88,6 +89,7 @@ function meeting_minutes_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 0,
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
@@ -135,6 +137,16 @@ function meeting_minutes_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => FALSE,
+        'insert_class' => '',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
+        'insert_styles' => array(
+          0 => 'auto',
+        ),
+        'insert_width' => '',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',

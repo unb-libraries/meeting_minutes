@@ -26,6 +26,9 @@ function meeting_minutes_permission() {
     'Edit PSC' => array(
       'title' => t('Create/Edit Meeting Minutes - Public Service Committee'),
     ),
+    'Edit SAC' => array(
+      'title' => t('Create/Edit Meeting Minutes - Student Advisory Council'),
+    ),
     'Edit STDC' => array(
       'title' => t('Create/Edit Meeting Minutes - Staff Training & Development Committee'),
     ),
@@ -49,6 +52,9 @@ function meeting_minutes_permission() {
     ),
     'View PSC' => array(
       'title' => t('View Meeting Minutes - Public Service Committee'),
+    ),
+    'View SAC' => array(
+      'title' => t('View Meeting Minutes - Student Advisory Council'),
     ),
     'View STDC' => array(
       'title' => t('View Meeting Minutes - Staff Training & Development Committee'),
