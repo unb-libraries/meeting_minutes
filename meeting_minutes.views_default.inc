@@ -136,7 +136,9 @@ Note: In the interests of sharing information as quickly as possible, some commi
     'ISC' => 'ISC',
     'LCSWG' => 'LCSWG',
     'LB' => 'LB',
+    'LMG' => 'LMG',
     'PSC' => 'PSC',
+    'SLC' => 'SLC',
     'SAC' => 'SAC',
     'STDC' => 'STDC',
     'WERC' => 'WERC',
@@ -165,7 +167,9 @@ Note: In the interests of sharing information as quickly as possible, some commi
     16 => 0,
     18 => 0,
     20 => 0,
+    56 => 0,
     22 => 0,
+    58 => 0,
     54 => 0,
     24 => 0,
     26 => 0,
@@ -174,7 +178,9 @@ Note: In the interests of sharing information as quickly as possible, some commi
     17 => 0,
     19 => 0,
     21 => 0,
+    57 => 0,
     23 => 0,
+    59 => 0,
     53 => 0,
     25 => 0,
     27 => 0,
@@ -201,6 +207,7 @@ Note: In the interests of sharing information as quickly as possible, some commi
     13 => 0,
     50 => 0,
     52 => 0,
+    55 => 0,
   );
   $handler->display->display_options['filters']['field_committee_or_publication_value']['expose']['reduce'] = TRUE;
 
