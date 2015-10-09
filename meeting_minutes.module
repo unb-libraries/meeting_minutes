@@ -23,8 +23,14 @@ function meeting_minutes_permission() {
     'Edit LB' => array(
       'title' => t('Create/Edit Meeting Minutes - Library Board'),
     ),
+    'Edit LMG' => array(
+      'title' => t('Create/Edit Meeting Minutes - Library Management Group'),
+    ),
     'Edit PSC' => array(
       'title' => t('Create/Edit Meeting Minutes - Public Service Committee'),
+    ),
+    'Edit SLC' => array(
+      'title' => t('Create/Edit Meeting Minutes - Senate Library Committee'),
     ),
     'Edit SAC' => array(
       'title' => t('Create/Edit Meeting Minutes - Student Advisory Council'),
@@ -50,8 +56,14 @@ function meeting_minutes_permission() {
     'View LB' => array(
       'title' => t('View Meeting Minutes - Library Board'),
     ),
+    'View LMG' => array(
+      'title' => t('View Meeting Minutes - Library Management Group'),
+    ),
     'View PSC' => array(
       'title' => t('View Meeting Minutes - Public Service Committee'),
+    ),
+    'View SLC' => array(
+      'title' => t('View Meeting Minutes - Senate Library Committee'),
     ),
     'View SAC' => array(
       'title' => t('View Meeting Minutes - Student Advisory Council'),
