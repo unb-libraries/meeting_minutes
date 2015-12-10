@@ -103,7 +103,7 @@ Note: In the interests of sharing information as quickly as possible, some commi
   $handler->display->display_options['sorts']['field_date_of_meeting_value']['table'] = 'field_data_field_date_of_meeting';
   $handler->display->display_options['sorts']['field_date_of_meeting_value']['field'] = 'field_date_of_meeting_value';
   $handler->display->display_options['sorts']['field_date_of_meeting_value']['order'] = 'DESC';
-  /* Contextual filter: Content: Committee or publication (field_committee_or_publication) */
+  /* Contextual filter: Content: Select Committee (field_committee_or_publication) */
   $handler->display->display_options['arguments']['field_committee_or_publication_value']['id'] = 'field_committee_or_publication_value';
   $handler->display->display_options['arguments']['field_committee_or_publication_value']['table'] = 'field_data_field_committee_or_publication';
   $handler->display->display_options['arguments']['field_committee_or_publication_value']['field'] = 'field_committee_or_publication_value';
@@ -127,7 +127,7 @@ Note: In the interests of sharing information as quickly as possible, some commi
   $handler->display->display_options['filters']['type']['value'] = array(
     'meeting_minutes' => 'meeting_minutes',
   );
-  /* Filter criterion: Content: Committee or publication (field_committee_or_publication) */
+  /* Filter criterion: Content: Select Committee (field_committee_or_publication) */
   $handler->display->display_options['filters']['field_committee_or_publication_value']['id'] = 'field_committee_or_publication_value';
   $handler->display->display_options['filters']['field_committee_or_publication_value']['table'] = 'field_data_field_committee_or_publication';
   $handler->display->display_options['filters']['field_committee_or_publication_value']['field'] = 'field_committee_or_publication_value';

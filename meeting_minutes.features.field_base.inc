@@ -10,7 +10,7 @@
 function meeting_minutes_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_committee_or_publication'
+  // Exported field_base: 'field_committee_or_publication'.
   $field_bases['field_committee_or_publication'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -44,7 +44,7 @@ function meeting_minutes_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_date_of_meeting'
+  // Exported field_base: 'field_date_of_meeting'.
   $field_bases['field_date_of_meeting'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -73,7 +73,7 @@ function meeting_minutes_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_minutes_file'
+  // Exported field_base: 'field_minutes_file'.
   $field_bases['field_minutes_file'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -96,7 +96,7 @@ function meeting_minutes_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_special_note'
+  // Exported field_base: 'field_special_note'.
   $field_bases['field_special_note'] = array(
     'active' => 1,
     'cardinality' => 1,

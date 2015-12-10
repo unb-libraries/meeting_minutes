@@ -11,7 +11,7 @@ function meeting_minutes_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'node-meeting_minutes-field_committee_or_publication'
+  // 'node-meeting_minutes-field_committee_or_publication'.
   $field_instances['node-meeting_minutes-field_committee_or_publication'] = array(
     'bundle' => 'meeting_minutes',
     'default_value' => NULL,
@@ -48,7 +48,7 @@ function meeting_minutes_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-meeting_minutes-field_date_of_meeting'
+  // Exported field_instance: 'node-meeting_minutes-field_date_of_meeting'.
   $field_instances['node-meeting_minutes-field_date_of_meeting'] = array(
     'bundle' => 'meeting_minutes',
     'deleted' => 0,
@@ -102,7 +102,7 @@ function meeting_minutes_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-meeting_minutes-field_minutes_file'
+  // Exported field_instance: 'node-meeting_minutes-field_minutes_file'.
   $field_instances['node-meeting_minutes-field_minutes_file'] = array(
     'bundle' => 'meeting_minutes',
     'deleted' => 0,
@@ -154,7 +154,7 @@ function meeting_minutes_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-meeting_minutes-field_special_note'
+  // Exported field_instance: 'node-meeting_minutes-field_special_note'.
   $field_instances['node-meeting_minutes-field_special_note'] = array(
     'bundle' => 'meeting_minutes',
     'default_value' => NULL,
