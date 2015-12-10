@@ -46,6 +46,15 @@ function meeting_minutes_user_default_permissions() {
     'module' => 'meeting_minutes',
   );
 
+  // Exported permission: 'Edit LMG'.
+  $permissions['Edit LMG'] = array(
+    'name' => 'Edit LMG',
+    'roles' => array(
+      'Meeting Minutes - Library Management Group Admin' => 'Meeting Minutes - Library Management Group Admin',
+    ),
+    'module' => 'meeting_minutes',
+  );
+
   // Exported permission: 'Edit PSC'.
   $permissions['Edit PSC'] = array(
     'name' => 'Edit PSC',
@@ -60,6 +69,15 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'Edit SAC',
     'roles' => array(
       'Meeting Minutes - Student Advisory Council Admin' => 'Meeting Minutes - Student Advisory Council Admin',
+    ),
+    'module' => 'meeting_minutes',
+  );
+
+  // Exported permission: 'Edit SLC'.
+  $permissions['Edit SLC'] = array(
+    'name' => 'Edit SLC',
+    'roles' => array(
+      'Meeting Minutes - Senate Library Committee Admin' => 'Meeting Minutes - Senate Library Committee Admin',
     ),
     'module' => 'meeting_minutes',
   );
@@ -131,6 +149,16 @@ function meeting_minutes_user_default_permissions() {
     'module' => 'meeting_minutes',
   );
 
+  // Exported permission: 'View LMG'.
+  $permissions['View LMG'] = array(
+    'name' => 'View LMG',
+    'roles' => array(
+      'Meeting Minutes - Library Management Group View' => 'Meeting Minutes - Library Management Group View',
+      'Regular Staff Member' => 'Regular Staff Member',
+    ),
+    'module' => 'meeting_minutes',
+  );
+
   // Exported permission: 'View PSC'.
   $permissions['View PSC'] = array(
     'name' => 'View PSC',
@@ -146,6 +174,17 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View SAC',
     'roles' => array(
       'Meeting Minutes - Student Advisory Council View' => 'Meeting Minutes - Student Advisory Council View',
+      'Regular Staff Member' => 'Regular Staff Member',
+    ),
+    'module' => 'meeting_minutes',
+  );
+
+  // Exported permission: 'View SLC'.
+  $permissions['View SLC'] = array(
+    'name' => 'View SLC',
+    'roles' => array(
+      'Meeting Minutes - Senate Library Committee View' => 'Meeting Minutes - Senate Library Committee View',
+      'Regular Staff Member' => 'Regular Staff Member',
     ),
     'module' => 'meeting_minutes',
   );
