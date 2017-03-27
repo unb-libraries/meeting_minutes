@@ -27,6 +27,7 @@ function meeting_minutes_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'CD' => 'Collections Development',
+        'COM' => 'Communications Committee',
         'ISC' => 'Instructional Services Committee',
         'LCSWG' => 'John B. McNair Learning Commons Services Committee',
         'LB' => 'Library Board',

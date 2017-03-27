@@ -19,6 +19,15 @@ function meeting_minutes_user_default_permissions() {
     'module' => 'meeting_minutes',
   );
 
+  // Exported permission: 'Edit COM'.
+  $permissions['Edit COM'] = array(
+    'name' => 'Edit COM',
+    'roles' => array(
+      'Meeting Minutes - Communications Committee Admin' => 'Meeting Minutes - Communications Committee Admin',
+    ),
+    'module' => 'meeting_minutes',
+  );
+
   // Exported permission: 'Edit ISC'.
   $permissions['Edit ISC'] = array(
     'name' => 'Edit ISC',
@@ -114,6 +123,16 @@ function meeting_minutes_user_default_permissions() {
     'name' => 'View CD',
     'roles' => array(
       'Meeting Minutes - Collections Development View' => 'Meeting Minutes - Collections Development View',
+      'Regular Staff Member' => 'Regular Staff Member',
+    ),
+    'module' => 'meeting_minutes',
+  );
+
+  // Exported permission: 'View COM'.
+  $permissions['View COM'] = array(
+    'name' => 'View COM',
+    'roles' => array(
+      'Meeting Minutes - Communications Committee View' => 'Meeting Minutes - Communications Committee View',
       'Regular Staff Member' => 'Regular Staff Member',
     ),
     'module' => 'meeting_minutes',
