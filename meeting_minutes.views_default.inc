@@ -213,6 +213,110 @@ Note: In the interests of sharing information as quickly as possible, some commi
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'meeting_minutes' => 'meeting_minutes',
+  );
+  /* Filter criterion: Content: Select Committee (field_committee_or_publication) */
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['id'] = 'field_committee_or_publication_value';
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['table'] = 'field_data_field_committee_or_publication';
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['field'] = 'field_committee_or_publication_value';
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['value'] = array(
+    'CD' => 'CD',
+    'COM' => 'COM',
+    'ISC' => 'ISC',
+    'LCSWG' => 'LCSWG',
+    'LB' => 'LB',
+    'LMG' => 'LMG',
+    'PSC' => 'PSC',
+    'SLC' => 'SLC',
+    'SAC' => 'SAC',
+    'STDC' => 'STDC',
+    'WERC' => 'WERC',
+    'WRC' => 'WRC',
+  );
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['expose']['operator_id'] = 'field_committee_or_publication_value_op';
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['expose']['label'] = 'Select Committee';
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['expose']['operator'] = 'field_committee_or_publication_value_op';
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['expose']['identifier'] = 'field_committee_or_publication_value';
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    30 => 0,
+    39 => 0,
+    46 => 0,
+    41 => 0,
+    42 => 0,
+    45 => 0,
+    36 => 0,
+    3 => 0,
+    4 => 0,
+    38 => 0,
+    63 => 0,
+    14 => 0,
+    68 => 0,
+    16 => 0,
+    18 => 0,
+    20 => 0,
+    56 => 0,
+    22 => 0,
+    58 => 0,
+    54 => 0,
+    24 => 0,
+    26 => 0,
+    28 => 0,
+    15 => 0,
+    69 => 0,
+    17 => 0,
+    19 => 0,
+    21 => 0,
+    57 => 0,
+    23 => 0,
+    59 => 0,
+    53 => 0,
+    25 => 0,
+    61 => 0,
+    51 => 0,
+    27 => 0,
+    29 => 0,
+    31 => 0,
+    33 => 0,
+    34 => 0,
+    32 => 0,
+    35 => 0,
+    43 => 0,
+    47 => 0,
+    48 => 0,
+    49 => 0,
+    40 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    8 => 0,
+    9 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    50 => 0,
+    52 => 0,
+    55 => 0,
+    60 => 0,
+  );
+  $handler->display->display_options['filters']['field_committee_or_publication_value']['expose']['reduce'] = TRUE;
   $export['list_meeting_minutes'] = $view;
 
   return $export;
