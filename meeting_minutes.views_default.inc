@@ -133,6 +133,7 @@ Note: In the interests of sharing information as quickly as possible, some commi
   $handler->display->display_options['filters']['field_committee_or_publication_value']['field'] = 'field_committee_or_publication_value';
   $handler->display->display_options['filters']['field_committee_or_publication_value']['value'] = array(
     'CD' => 'CD',
+    'COMM' => 'COMM',
     'ISC' => 'ISC',
     'LCSWG' => 'LCSWG',
     'LB' => 'LB',
@@ -162,8 +163,9 @@ Note: In the interests of sharing information as quickly as possible, some commi
     3 => 0,
     4 => 0,
     38 => 0,
-    44 => 0,
+    63 => 0,
     14 => 0,
+    68 => 0,
     16 => 0,
     18 => 0,
     20 => 0,
@@ -175,6 +177,7 @@ Note: In the interests of sharing information as quickly as possible, some commi
     26 => 0,
     28 => 0,
     15 => 0,
+    69 => 0,
     17 => 0,
     19 => 0,
     21 => 0,
@@ -183,9 +186,10 @@ Note: In the interests of sharing information as quickly as possible, some commi
     59 => 0,
     53 => 0,
     25 => 0,
+    61 => 0,
+    51 => 0,
     27 => 0,
     29 => 0,
-    51 => 0,
     31 => 0,
     33 => 0,
     34 => 0,
@@ -208,6 +212,7 @@ Note: In the interests of sharing information as quickly as possible, some commi
     50 => 0,
     52 => 0,
     55 => 0,
+    60 => 0,
   );
   $handler->display->display_options['filters']['field_committee_or_publication_value']['expose']['reduce'] = TRUE;
 
@@ -235,7 +240,7 @@ Note: In the interests of sharing information as quickly as possible, some commi
   $handler->display->display_options['filters']['field_committee_or_publication_value']['field'] = 'field_committee_or_publication_value';
   $handler->display->display_options['filters']['field_committee_or_publication_value']['value'] = array(
     'CD' => 'CD',
-    'COM' => 'COM',
+    'COMM' => 'COMM',
     'ISC' => 'ISC',
     'LCSWG' => 'LCSWG',
     'LB' => 'LB',

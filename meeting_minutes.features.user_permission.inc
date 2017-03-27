@@ -19,9 +19,9 @@ function meeting_minutes_user_default_permissions() {
     'module' => 'meeting_minutes',
   );
 
-  // Exported permission: 'Edit COM'.
-  $permissions['Edit COM'] = array(
-    'name' => 'Edit COM',
+  // Exported permission: 'Edit COMM'.
+  $permissions['Edit COMM'] = array(
+    'name' => 'Edit COMM',
     'roles' => array(
       'Meeting Minutes - Communications Committee Admin' => 'Meeting Minutes - Communications Committee Admin',
     ),
@@ -128,9 +128,9 @@ function meeting_minutes_user_default_permissions() {
     'module' => 'meeting_minutes',
   );
 
-  // Exported permission: 'View COM'.
-  $permissions['View COM'] = array(
-    'name' => 'View COM',
+  // Exported permission: 'View COMM'.
+  $permissions['View COMM'] = array(
+    'name' => 'View COMM',
     'roles' => array(
       'Meeting Minutes - Communications Committee View' => 'Meeting Minutes - Communications Committee View',
       'Regular Staff Member' => 'Regular Staff Member',

@@ -14,7 +14,7 @@ function meeting_minutes_permission() {
     'Edit CD' => array(
       'title' => t('Create/Edit Meeting Minutes - Collections Development'),
     ),
-    'Edit COM' => array(
+    'Edit COMM' => array(
       'title' => t('Create/Edit Meeting Minutes - Communications Committee'),
     ),
     'Edit ISC' => array(
@@ -50,7 +50,7 @@ function meeting_minutes_permission() {
     'View CD' => array(
       'title' => t('View Meeting Minutes - Collections Development'),
     ),
-    'View COM' => array(
+    'View COMM' => array(
       'title' => t('View Meeting Minutes - Communications Committee'),
     ),
     'View ISC' => array(
